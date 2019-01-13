@@ -12,7 +12,7 @@
 <input type="button" value="보내기" onclick="reqMsg()">
 <script>
     function reqMsg() {
-        let chatText =$(`[name="chatText"]`);
+        let chatText = $(`[name="chatText"]`);
         let sendData = chatText.val();
         chatText.val('');
         console.log(sendData);
@@ -30,7 +30,7 @@
             .then((res) => {
                 console.log('get success');
                 let chatArea = $('#chatArea');
-                chatArea.val(chatArea.val()+res.data.data+'\n');
+                chatArea.val(chatArea.val() + res.data.data + '\n');
                 resMsg();
             })
             .catch((res) => {
@@ -38,6 +38,7 @@
                 setTimeout(resMsg, 5000);
             })
     }
+
     resMsg();
 </script>
 </body>
